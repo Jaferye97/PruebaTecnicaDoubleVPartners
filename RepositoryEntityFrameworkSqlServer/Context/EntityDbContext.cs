@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using RepositoryEntityFrameworkSqlServer.Entities;
 
 namespace RepositoryEntityFrameworkSqlServer.Context
 {
@@ -11,5 +12,7 @@ namespace RepositoryEntityFrameworkSqlServer.Context
         public EntityDbContext(DbContextOptions<EntityDbContext> options)
         : base(options)
         { }
+
+        public DbSet<TicketEntity> Customer { get; set; }
     }
 }
