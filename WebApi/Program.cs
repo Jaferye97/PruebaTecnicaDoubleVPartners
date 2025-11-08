@@ -19,6 +19,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<IAddTicketUseCase, AddTicketUseCase>();
+builder.Services.AddScoped<IGetTicketByIdUseCase, GetTicketByIdUseCase>();
 
 builder.Services.AddScoped<ITicketRepositoryPort, TicketRepository>();
 

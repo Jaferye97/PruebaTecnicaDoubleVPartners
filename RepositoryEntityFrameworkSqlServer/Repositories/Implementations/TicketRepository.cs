@@ -13,5 +13,9 @@ namespace RepositoryEntityFrameworkSqlServer.Repositories.Implementations
         }
 
         public async Task<TicketModel> AddAsync(TicketModel model) => TicketMapper.ToDomain(await base.AddAsync(model));
+
+        public async Task<bool> ExistRecordAsync(int id) => await base.CountAsync(x => x.Id == id) == 0 ? false : true;
+
+        public async Task<TicketModel> GetAsync(int id) => await base.GetAsync(id);
     }
 }
