@@ -8,5 +8,6 @@ namespace Application.Ports.RepositoryEntityFrameworkSqlServer
         Task<bool> ExistRecordAsync(int id);
         Task<TicketModel> GetAsync(int id);
         Task<TicketModel> UpdateAsync(TicketModel model);
+        Task DeleteAsync(TicketModel model);
     }
 }
