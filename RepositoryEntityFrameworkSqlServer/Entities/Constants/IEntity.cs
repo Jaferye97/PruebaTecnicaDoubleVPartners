@@ -1,6 +1,6 @@
 ﻿namespace RepositoryEntityFrameworkSqlServer.Entities.Constants
 {
-    internal interface IEntity<TPrimaryKey>
+    public interface IEntity<TPrimaryKey>
     {
         TPrimaryKey Id { get; set; }
     }

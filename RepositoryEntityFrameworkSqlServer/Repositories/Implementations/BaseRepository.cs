@@ -4,7 +4,7 @@ using RepositoryEntityFrameworkSqlServer.Entities.Constants;
 
 namespace RepositoryEntityFrameworkSqlServer.Repositories.Implementations
 {
-    internal abstract class BaseRepository<TEntity, TModel, TPrimary> : IBaseRepository<TEntity, TModel, TPrimary>
+    public abstract class BaseRepository<TEntity, TModel, TPrimary> : IBaseRepository<TEntity, TModel, TPrimary>
     where TEntity : class, IEntity<TPrimary>
     where TModel : class
     {

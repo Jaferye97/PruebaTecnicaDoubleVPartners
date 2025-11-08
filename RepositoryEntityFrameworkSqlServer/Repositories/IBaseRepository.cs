@@ -2,7 +2,7 @@
 
 namespace RepositoryEntityFrameworkSqlServer.Repositories
 {
-    internal interface IBaseRepository<TEntity, TModel, in TPrimary>
+    public interface IBaseRepository<TEntity, TModel, in TPrimary>
         where TEntity : class
         where TModel : class
     {
