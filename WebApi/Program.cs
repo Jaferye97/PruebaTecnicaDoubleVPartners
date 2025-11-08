@@ -20,6 +20,7 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<IAddTicketUseCase, AddTicketUseCase>();
 builder.Services.AddScoped<IGetTicketByIdUseCase, GetTicketByIdUseCase>();
+builder.Services.AddScoped<IUpdateTicketUseCase, UpdateTicketUseCase>();
 
 builder.Services.AddScoped<ITicketRepositoryPort, TicketRepository>();
 
