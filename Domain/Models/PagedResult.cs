@@ -1,5 +1,8 @@
-﻿namespace Domain.Models
+﻿using System.Diagnostics.CodeAnalysis;
+
+namespace Domain.Models
 {
+    [ExcludeFromCodeCoverage]
     public class PagedResult<T>
     {
         public List<T> Items { get; set; } = new();

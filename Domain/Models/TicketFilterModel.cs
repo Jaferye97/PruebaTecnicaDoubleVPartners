@@ -1,5 +1,8 @@
-﻿namespace Domain.Models
+﻿using System.Diagnostics.CodeAnalysis;
+
+namespace Domain.Models
 {
+    [ExcludeFromCodeCoverage]
     public class TicketFilterModel
     {
         public string? Usuario { get; set; }
