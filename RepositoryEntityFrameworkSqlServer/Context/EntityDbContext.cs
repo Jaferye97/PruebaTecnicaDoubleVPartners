@@ -13,6 +13,6 @@ namespace RepositoryEntityFrameworkSqlServer.Context
         : base(options)
         { }
 
-        public DbSet<TicketEntity> Customer { get; set; }
+        public DbSet<TicketEntity> Ticket { get; set; }
     }
 }
