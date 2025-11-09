@@ -22,6 +22,7 @@ builder.Services.AddScoped<IAddTicketUseCase, AddTicketUseCase>();
 builder.Services.AddScoped<IGetTicketByIdUseCase, GetTicketByIdUseCase>();
 builder.Services.AddScoped<IUpdateTicketUseCase, UpdateTicketUseCase>();
 builder.Services.AddScoped<IDeleteTicketByIdUseCase, DeleteTicketByIdUseCase>();
+builder.Services.AddScoped<IGetTicketByFiltersUseCase, GetTicketByFiltersUseCase>();
 
 builder.Services.AddScoped<ITicketRepositoryPort, TicketRepository>();
 

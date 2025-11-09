@@ -12,17 +12,20 @@ namespace WebApi.Controllers
         private readonly IGetTicketByIdUseCase _getByIdTicketUseCase;
         private readonly IUpdateTicketUseCase _updateTicketUseCase;
         private readonly IDeleteTicketByIdUseCase _deleteTicketByIdUseCase;
+        private readonly IGetTicketByFiltersUseCase _getTicketByFiltersUseCase;
 
         public TicketController(
             IAddTicketUseCase addTicketUseCase,
             IGetTicketByIdUseCase getByIdTicketUseCase,
             IUpdateTicketUseCase updateTicketUseCase,
-            IDeleteTicketByIdUseCase deleteTicketByIdUseCase)
+            IDeleteTicketByIdUseCase deleteTicketByIdUseCase,
+            IGetTicketByFiltersUseCase getTicketByFiltersUseCase)
         {
             _addTicketUseCase = addTicketUseCase;
             _getByIdTicketUseCase = getByIdTicketUseCase;
             _updateTicketUseCase = updateTicketUseCase;
             _deleteTicketByIdUseCase = deleteTicketByIdUseCase;
+            _getTicketByFiltersUseCase = getTicketByFiltersUseCase;
         }
 
         [HttpPost()]
@@ -54,6 +57,14 @@ namespace WebApi.Controllers
             await _deleteTicketByIdUseCase.ExecuteAsync(id);
 
             return Ok();
+        }
+
+        [HttpPost("GetAll")]
+        public async Task<IActionResult> GetAllAsync([FromBody] TicketFilterModel filters)
+        {
+            var result = await _getTicketByFiltersUseCase.ExecuteAsync(filters);
+
+            return Ok(result);
         }
     }
 }

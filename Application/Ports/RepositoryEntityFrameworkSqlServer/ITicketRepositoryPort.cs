@@ -9,5 +9,6 @@ namespace Application.Ports.RepositoryEntityFrameworkSqlServer
         Task<TicketModel> GetAsync(int id);
         Task<TicketModel> UpdateAsync(TicketModel model);
         Task DeleteAsync(TicketModel model);
+        Task<PagedResult<TicketModel>> GetAllAsync(TicketFilterModel filter);
     }
 }
