@@ -96,12 +96,42 @@ dotnet test
 
 ---
 
+### 🐳 Despliegue con Docker
+
+1. Ejecuta el siguiente comando en CMD o PowerShell desde la carpeta que contiene `Dockerfile` y `docker-compose.yml`:
+
+```
+docker-compose up --build
+```
+
+2. Confirma que los contenedores se estén ejecutando correctamente desde Docker Desktop.
+
+<img width="1913" height="566" alt="image" src="https://github.com/user-attachments/assets/b40a3371-412e-4aab-b1b7-6e5c6113ec4d" />
+
+3. Conéctate a la base de datos local usando SQL Server Management Studio o Visual Studio SQL:
+
+```
+User: sa
+Password: Your_password123
+```
+
+<img width="494" height="325" alt="image" src="https://github.com/user-attachments/assets/b63a7a52-8610-4bb5-8d3b-656ccaa70647" />
+
+4. Ejecuta el script 01. Base structure.sql para crear la estructura inicial de la base de datos.
+
+5. Abre Swagger en tu navegador para verificar que la aplicación se está ejecutando:
+
+<img width="1912" height="785" alt="image" src="https://github.com/user-attachments/assets/9a0306dd-c6b4-4dbd-8537-fc819d6d9653" />
+
+---
+
 ## 🙋 Autor
 
 ### Yeimer Andres Jaramillo Fernandez
 📧 Mail: Andresjara0897@hotmail.com <br/>
 💼 GitHub: https://github.com/Jaferye97 <br/>
 🔗 LinkedIn: https://www.linkedin.com/in/yeimerjarafer/ <br/>
+
 
 
 
