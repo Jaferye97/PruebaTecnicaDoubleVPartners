@@ -2,7 +2,6 @@
 GO
 
 USE Partners_PruebaTecnica;
-GO;
 
 CREATE TABLE Ticket (
     Id INT IDENTITY(1,1) NOT NULL,
