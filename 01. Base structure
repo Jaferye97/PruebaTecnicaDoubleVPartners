@@ -1,0 +1,41 @@
+﻿CREATE DATABASE Partners_PruebaTecnica;
+GO
+
+USE Partners_PruebaTecnica;
+GO;
+
+CREATE TABLE Ticket (
+    Id INT IDENTITY(1,1) NOT NULL,
+    Usuario NVARCHAR(100) NOT NULL,
+    FechaCreacion DATETIME2 NOT NULL,
+    FechaActualizacion DATETIME2 NULL,
+    Estatus NVARCHAR(20) NOT NULL
+);
+GO
+
+ALTER TABLE Ticket ADD CONSTRAINT PK_Ticket PRIMARY KEY (Id);
+GO
+
+ALTER TABLE Ticket ADD CONSTRAINT DF_Ticket_FechaCreacion DEFAULT (GETUTCDATE()) FOR FechaCreacion;
+GO
+
+ALTER TABLE Ticket ADD CONSTRAINT DF_Ticket_Estatus DEFAULT ('Abierto') FOR Estatus;
+GO
+
+ALTER TABLE Ticket ADD CONSTRAINT CK_Ticket_Estatus CHECK (Estatus IN ('Abierto', 'Cerrado'));
+GO
+
+INSERT INTO Ticket (Usuario, Estatus, FechaActualizacion)
+VALUES 
+('yeimer.jaramillo', 'Abierto', NULL),
+('andres.gomez', 'Cerrado', '2025-11-02 10:15:00'),
+('amanda.lopez', 'Abierto', NULL),
+('julian.mejia', 'Cerrado', '2025-10-28 18:20:00'),
+('maria.torres', 'Abierto', NULL),
+('camilo.ramirez', 'Abierto', NULL),
+('laura.gonzalez', 'Cerrado', '2025-11-05 09:30:00'),
+('sebastian.perez', 'Abierto', NULL),
+('ana.rojas', 'Cerrado', '2025-10-31 14:45:00'),
+('carlos.ortiz', 'Abierto', NULL);
+GO
+
